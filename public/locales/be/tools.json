@@ -6,7 +6,9 @@
     "convertFromPdf": "Канвертацыя з PDF",
     "organizeManage": "Арганізацыя і кіраванне",
     "optimizeRepair": "Аптымізацыя і аднаўленне",
-    "securePdf": "Бяспека PDF"
+    "securePdf": "Бяспека PDF",
+    "input": "Увод",
+    "output": "Вывад"
   },
   "pdfMultiTool": {
     "name": "Мультыінструмент PDF",
@@ -14,7 +16,9 @@
   },
   "mergePdf": {
     "name": "Аб'яднаць PDF",
-    "subtitle": "Аб'яднаць некалькі PDF у адзін файл. Закладкі захоўваюцца."
+    "subtitle": "Аб'яднаць некалькі PDF у адзін файл. Закладкі захоўваюцца.",
+    "retainPageLabels": "Захоўваць арыгінальныя пазнакі старонак з кожнага файла",
+    "retainPageLabelsHint": "Выключана (па змаўчанні): аб’яднаны PDF выкарыстоўвае натуральную нумарацыю 1–N. Уключана: арыгінальныя пазнакі старонак кожнага файла захоўваюцца (могуць узнікнуць паўторы)."
   },
   "splitPdf": {
     "name": "Падзяліць PDF",
@@ -389,9 +393,11 @@
     "name": "OCR PDF",
     "subtitle": "Дадаць у PDF магчымасці пошуку і капіравання."
   },
-  "alternateMix": {
+  "alternateMerge": {
     "name": "Чаргаваць і змяшаць старонкі",
-    "subtitle": "Аб'яднаць PDF, чаргуючы старонкі з асобных PDF. Закладкі захоўваюцца."
+    "subtitle": "Аб'яднаць PDF, чаргуючы старонкі з асобных PDF. Закладкі захоўваюцца.",
+    "retainPageLabels": "Захоўваць арыгінальныя пазнакі старонак з кожнага файла",
+    "retainPageLabelsHint": "Выключана (па змаўчанні): аб’яднаны PDF выкарыстоўвае натуральную нумарацыю 1–N. Уключана: арыгінальныя пазнакі старонак кожнага файла захоўваюцца (могуць узнікнуць паўторы)."
   },
   "addAttachments": {
     "name": "Дадаць далучэнні",
@@ -755,7 +761,7 @@
     "tsaSectionTitle": "Сервер пазнак часу (TSA)",
     "selectTsa": "Выбраць сервер TSA",
     "applyTimestamp": "Прымяніць пазнаку часу",
-    "successMessage": "PDF паспяхова атрымаў пазнаку часу! Пазнаку можна праверыць у Adobe Acrobat і іншых PDF-праглядчыках."
+    "successMessage": "PDF паспяхова атрымаў пазнаку часу! Пазнаку можна праверыць у любым PDF-чытальніку."
   },
   "emailToPdf": {
     "name": "Email у PDF",
@@ -830,7 +836,73 @@
     "templateLoaded": "Шаблон \"{{name}}\" загружаны.",
     "failedLoadTemplate": "Не ўдалося загрузіць шаблон.",
     "noSettings": "Няма налад для гэтага вузла.",
-    "advancedSettings": "Пашыраныя налады"
+    "advancedSettings": "Пашыраныя налады",
+    "specialNodes": {
+      "pdfInput": {
+        "name": "Увод PDF",
+        "description": "Загрузіце адзін ці некалькі файлаў PDF"
+      },
+      "download": {
+        "name": "Спампаваць",
+        "description": "Аўтаматычна спампаваць як PDF або ZIP"
+      }
+    },
+    "errors": {
+      "noPdfsConnected": "Няма PDF, падключаных да вузла {{node}}",
+      "noPdfInputs": "Няма PDF на ўваходзе",
+      "expectedPdfInput": "Чакаўся ўвод PDF",
+      "failedToRenderPage": "Не атрымалася адлюстраваць старонку {{page}}",
+      "failedToGetCanvasContext": "Не атрымалася атрымаць кантэкст палатна для старонкі {{page}}",
+      "failedToRenderPageToImage": "Не атрымалася адлюстраваць старонку {{page}} як выяву",
+      "noPagesProcessed": "Ніводнай старонкі не апрацавана",
+      "cpdfNotConfigured": "CoherentPDF не настроены. Настройце яго ў пашыраных параметрах.",
+      "workerError": "Памылка воркера: {{message}}",
+      "alternateMergeWorkerError": "Памылка воркера паслядоўнага зліцця: {{message}}",
+      "noPdfFilesUploaded": "У вузел PDF Input не загружаны PDF-файлы",
+      "failedToLoadFile": "Не атрымалася загрузіць \"{{file}}\" — файл можа быць пашкоджаны",
+      "noImagesUploaded": "У вузел Image Input не загружаны выявы",
+      "noWordDocsUploaded": "У вузел Word Input не загружаны дакументы",
+      "noExcelUploaded": "У вузел Excel Input не загружаны табліцы",
+      "noPowerPointUploaded": "У вузел PowerPoint Input не загружаны прэзентацыі",
+      "noCbzUploaded": "У вузел CBZ Input не загружаны архівы коміксаў",
+      "noEmailUploaded": "У вузел Email Input не загружаны файлы пошты",
+      "noEpubUploaded": "У вузел EPUB Input не загружаны файлы EPUB",
+      "noFb2Uploaded": "У вузел FB2 Input не загружаны файлы FB2",
+      "noJsonUploaded": "У вузел JSON Input не загружаны файлы JSON",
+      "noMarkdownUploaded": "У вузел Markdown Input не загружаны файлы Markdown",
+      "noMobiUploaded": "У вузел MOBI Input не загружаны файлы MOBI",
+      "noOdgUploaded": "У вузел ODG Input не загружаны файлы ODG",
+      "noPagesUploaded": "У вузел Pages Input не загружаны файлы Pages",
+      "noPubUploaded": "У вузел PUB Input не загружаны файлы PUB",
+      "noSvgUploaded": "У вузел SVG Input не загружаны файлы SVG",
+      "noTextUploaded": "У вузел Text Input не загружаны тэкставыя файлы",
+      "noVsdUploaded": "У вузел VSD Input не загружаны файлы Visio",
+      "noWpdUploaded": "У вузел WPD Input не загружаны файлы WPD",
+      "noWpsUploaded": "У вузел WPS Input не загружаны файлы WPS",
+      "noXmlUploaded": "У вузел XML Input не загружаны файлы XML",
+      "noXpsUploaded": "У вузел XPS Input не загружаны файлы XPS",
+      "alternateMergeNeedsTwo": "Паслядоўнаму зліццю патрэбна як мінімум два PDF, падключаныя да ўваходу",
+      "cropMarginsExceed": "Палі абрэзкі перавышаюць памеры старонкі. Паменшыце значэнні.",
+      "digitalSignNoCertificate": "У вузле лічбавага подпісу не загружаны сертыфікат",
+      "encryptUserPasswordRequired": "Для шыфравання патрэбны карыстальніцкі пароль",
+      "extractImagesNoneFound": "У падключаных PDF не знойдзена выяў",
+      "invertColorsFailedReadImage": "Не атрымалася прачытаць даныя выявы",
+      "overlayRequiresPdf": "Вузел накладання патрабуе ўвод PDF для накладання.",
+      "pdfToCsvNoTables": "У PDF не знойдзена табліц",
+      "pdfToXlsxNoTables": "У {{file}} не знойдзена табліц",
+      "posterizeFailedTileCanvas": "Не атрымалася атрымаць кантэкст палатна пліткі",
+      "redactNoText": "Рэдагаванне: не вызначаны тэкст для рэдагавання",
+      "removeBlankPagesAllBlank": "Усе старонкі пустыя",
+      "svgFailedToConvert": "Не атрымалася канвертаваць SVG",
+      "svgFailedToLoad": "Не атрымалася загрузіць SVG",
+      "timestampFailed": "Не атрымалася паставіць метку часу праз TSA {{tsa}}: {{message}}",
+      "noOutputNodes": "Не знойдзена вузлоў вываду. Дадайце вузел Download, каб завяршыць ваш працоўны працэс.",
+      "circularDependency": "У працоўным працэсе выяўлена кругавая залежнасць. Выдаліце ўсе цыклы паміж вузламі.",
+      "encryptOrdering": "Вузел шыфравання падае даныя ў \"{{target}}\", што можа збой на зашыфраваных даных. Перамясціце шыфраванне непасрэдна перад вузлом вываду.",
+      "invalidWorkflowFile": "Несапраўдны файл працоўнага працэсу: адсутнічае масіў вузлоў або злучэнняў.",
+      "storageQuotaExceeded": "Не атрымалася захаваць працоўны працэс: перавышана квота сховішча. Паспрабуйце выдаліць старыя шаблоны.",
+      "failedToImport": "Не атрымалася імпартаваць працоўны працэс: {{message}}"
+    }
   },
   "pdfOverlay": {
     "name": "Накладанне PDF",

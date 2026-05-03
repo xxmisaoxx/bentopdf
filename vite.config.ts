@@ -33,7 +33,7 @@ const SUPPORTED_LANGUAGES = [
   'zh-TW',
   'ko',
   'ja',
-  'ua',
+  'uk',
 ] as const;
 const LANG_REGEX = new RegExp(
   `^/(${SUPPORTED_LANGUAGES.join('|')})(?:/(.*))?$`
@@ -207,6 +207,11 @@ function buildCorsProxyAllowedHosts(): Set<string> {
     'fonts.googleapis.com',
     'fonts.gstatic.com',
     'bentopdf-cors-proxy.bentopdf.workers.dev',
+    'timestamp.digicert.com',
+    'timestamp.sectigo.com',
+    'ts.ssl.com',
+    'freetsa.org',
+    'tsa.mesign.com',
   ]);
 
   const envHostSources = [
