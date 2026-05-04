@@ -688,6 +688,82 @@ button:disabled,
   pointer-events: none;
 }
 
+/* Elegant Tool Card Enhancements */
+.tool-card {
+  transition:
+    transform 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+    border-color 0.25s ease;
+  border: 1px solid rgba(55, 65, 81, 0.6);
+  background: linear-gradient(
+    145deg,
+    rgba(31, 41, 55, 0.9),
+    rgba(17, 24, 39, 0.6)
+  );
+  backdrop-filter: blur(8px);
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  cursor: pointer;
+}
+
+.tool-card:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    0 20px 25px -5px rgba(0, 0, 0, 0.25),
+    0 8px 10px -6px rgba(0, 0, 0, 0.15),
+    0 0 0 1px rgba(79, 70, 229, 0.15);
+  border-color: rgba(99, 102, 241, 0.4);
+}
+
+.tool-card:active {
+  transform: translateY(-1px) scale(0.985);
+}
+
+/* Elegant search input */
+#search-bar::placeholder {
+  color: #6b7280;
+}
+
+#search-bar:focus {
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15);
+}
+
+/* Subtle section dividers */
+.section-divider {
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(99, 102, 241, 0.35),
+    transparent
+  );
+  margin: 2rem auto;
+  max-width: 36rem;
+  opacity: 0.6;
+}
+
+/* Refined scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(79, 70, 229, 0.35);
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(79, 70, 229, 0.55);
+}
+
 /* Color picker */
 input[type='color'] {
   width: 2.5rem;
