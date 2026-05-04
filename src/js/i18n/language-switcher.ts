@@ -176,16 +176,17 @@ export const injectLanguageSwitcher = (): void => {
   const footer = document.querySelector('footer');
   if (!footer) return;
 
-  const headings = footer.querySelectorAll('h3');
+  const headings = footer.querySelectorAll('h3, h4');
   let followUsColumn: HTMLElement | null = null;
 
-  headings.forEach((h3) => {
+  headings.forEach((heading) => {
+    const text = heading.textContent?.trim();
     if (
-      h3.textContent?.trim() === 'Follow Us' ||
-      h3.textContent?.trim() === 'Folgen Sie uns' ||
-      h3.textContent?.trim() === 'Theo dõi chúng tôi'
+      text === 'Follow Us' ||
+      text === 'Folgen Sie uns' ||
+      text === 'Theo dõi chúng tôi'
     ) {
-      followUsColumn = h3.parentElement;
+      followUsColumn = heading.parentElement;
     }
   });
 
