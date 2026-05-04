@@ -423,6 +423,63 @@ const init = async () => {
     const searchBar = document.getElementById('search-bar');
     const categoryGroups = dom.toolGrid.querySelectorAll('.category-group');
 
+    // Category tab filtering
+    const categoryTabMap: Record<string, string> = {
+      organize: 'Organize & Manage',
+      optimize: 'Optimize & Repair',
+      'convert-to': 'Convert to PDF',
+      'convert-from': 'Convert from PDF',
+      edit: 'Edit & Annotate',
+      security: 'Secure PDF',
+    };
+
+    const categoryTabs = document.querySelectorAll('.category-tab');
+    categoryTabs.forEach((tab) => {
+      tab.addEventListener('click', () => {
+        const category = (tab as HTMLElement).dataset.category;
+        if (!category) return;
+
+        categoryTabs.forEach((t) => {
+          t.classList.remove(
+            'active',
+            'bg-indigo-600',
+            'text-white',
+            'shadow-sm'
+          );
+          t.classList.add(
+            'bg-white',
+            'text-gray-600',
+            'border',
+            'border-gray-200'
+          );
+        });
+        tab.classList.add('active', 'bg-indigo-600', 'text-white', 'shadow-sm');
+        tab.classList.remove(
+          'bg-white',
+          'text-gray-600',
+          'border',
+          'border-gray-200'
+        );
+
+        if (category === 'all') {
+          categoryGroups.forEach((group) => {
+            (group as HTMLElement).style.display = '';
+          });
+        } else {
+          const targetName = categoryTabMap[category];
+          categoryGroups.forEach((group) => {
+            const header = group.querySelector('.category-header span');
+            const name = header?.textContent?.trim() || '';
+            if (name === targetName) {
+              (group as HTMLElement).style.display = '';
+            } else {
+              (group as HTMLElement).style.display = 'none';
+            }
+          });
+        }
+      });
+    });
+
     const searchResultsContainer = document.createElement('div');
     searchResultsContainer.id = 'search-results';
     searchResultsContainer.className =
