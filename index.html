@@ -12,7 +12,7 @@
     />
     <meta
       name="description"
-      content="★ Free online PDF tools - Merge, split, compress, convert PDFs ★ 100% browser-based ★ No signup required ★ Unlimited files ★ Privacy-first & secure ★ Works offline ★ 100+ PDF tools"
+      content="Free online PDF tools - Merge, split, compress, convert PDFs. 100% browser-based. No signup required. Unlimited files. Privacy-first & secure. 100+ PDF tools."
     />
     <meta
       name="keywords"
@@ -98,149 +98,177 @@
     <link href="src/css/styles.css" rel="stylesheet" />
   </head>
 
-  <body class="antialiased">
+  <body class="antialiased bg-white text-gray-900">
     {{> navbar }}
 
     <div id="app" class="min-h-screen">
-      <!-- Minimal Elegant Hero -->
+      <!-- Hero Section -->
       <section
-        id="hero-section"
-        class="relative text-center pt-16 pb-10 md:pt-24 md:pb-14 overflow-hidden"
+        class="relative text-center pt-16 pb-12 md:pt-20 md:pb-16 bg-gradient-to-b from-gray-50 to-white"
       >
-        <div class="bg-grid-pattern"></div>
         <div class="container mx-auto px-4 relative z-10">
           <h1
-            class="text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-4 tracking-tight"
+            class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-gray-900 mb-5 tracking-tight leading-tight"
           >
-            <span data-i18n="hero.title">The</span>
-            <span
-              class="inline-flex items-center gap-2 md:gap-3 border border-indigo-400/60 bg-indigo-900/40 text-indigo-200 px-3 py-1 md:px-4 md:py-2 rounded-full mx-1 md:mx-2 align-middle backdrop-blur-sm"
-            >
-              <span data-i18n="hero.pdfToolkit">PDF Toolkit</span>
-              <i
-                data-lucide="briefcase"
-                class="w-5 h-5 md:w-8 md:h-8 transform -rotate-4"
-              ></i>
-            </span>
-            <span data-i18n="hero.builtForPrivacy">built for privacy</span>
+            Every tool you need to<br class="hidden md:block" />
+            work with PDFs in one place
           </h1>
-          <p class="text-gray-400 text-sm md:text-base max-w-xl mx-auto mb-6">
-            100+ free PDF tools. No signup, no limits, no uploads — everything
-            happens in your browser.
-          </p>
-          <div
-            class="flex flex-wrap justify-center items-center gap-2 sm:gap-3"
+          <p
+            class="text-gray-500 text-base md:text-lg max-w-2xl mx-auto mb-8 leading-relaxed"
           >
+            Every tool you need to use PDFs, at your fingertips. All are 100%
+            FREE and easy to use! Merge, split, compress, convert, rotate,
+            unlock and watermark PDFs with just a few clicks.
+          </p>
+          <div class="flex flex-wrap justify-center items-center gap-3">
             <span
-              class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-gray-800/50 border border-gray-700/40 text-gray-400 text-xs font-medium"
+              class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-green-50 text-green-700 text-xs font-medium border border-green-100"
             >
-              <i
-                data-lucide="check-circle"
-                class="w-3.5 h-3.5 text-indigo-400"
-              ></i>
-              <span data-i18n="hero.noSignups">No Signups</span>
+              <i data-lucide="check-circle" class="w-3.5 h-3.5"></i>
+              No Signups
             </span>
             <span
-              class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-gray-800/50 border border-gray-700/40 text-gray-400 text-xs font-medium"
+              class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-green-50 text-green-700 text-xs font-medium border border-green-100"
             >
-              <i
-                data-lucide="check-circle"
-                class="w-3.5 h-3.5 text-indigo-400"
-              ></i>
-              <span data-i18n="hero.unlimitedUse">Unlimited Use</span>
+              <i data-lucide="check-circle" class="w-3.5 h-3.5"></i>
+              Unlimited Use
             </span>
             <span
-              class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-gray-800/50 border border-gray-700/40 text-gray-400 text-xs font-medium"
+              class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-green-50 text-green-700 text-xs font-medium border border-green-100"
             >
-              <i
-                data-lucide="check-circle"
-                class="w-3.5 h-3.5 text-indigo-400"
-              ></i>
-              <span data-i18n="hero.worksOffline">Works Offline</span>
+              <i data-lucide="check-circle" class="w-3.5 h-3.5"></i>
+              Works Offline
+            </span>
+            <span
+              class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-green-50 text-green-700 text-xs font-medium border border-green-100"
+            >
+              <i data-lucide="check-circle" class="w-3.5 h-3.5"></i>
+              Privacy First
             </span>
           </div>
         </div>
       </section>
 
       <!-- Tools Section -->
-      <section class="container mx-auto px-4 md:px-8 pb-12">
-        <div id="tools-header" class="text-center mb-8">
-          <h2 class="text-2xl md:text-3xl font-bold text-white mb-2">
-            <span data-i18n="tools.title">Get Started with</span>
-            <span class="marker-slanted ml-2" data-i18n="tools.toolsLabel"
-              >Tools</span
+      <section class="container mx-auto px-4 md:px-6 pb-16">
+        <!-- Search Bar -->
+        <div class="max-w-xl mx-auto mb-8">
+          <div class="relative">
+            <span class="absolute inset-y-0 left-0 flex items-center pl-4">
+              <i data-lucide="search" class="w-5 h-5 text-gray-400"></i>
+            </span>
+            <input
+              type="text"
+              id="search-bar"
+              class="w-full pl-12 pr-4 py-3.5 bg-white text-gray-900 border border-gray-200 rounded-xl focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500 transition-all shadow-sm hover:border-gray-300"
+              placeholder="Search for a tool (e.g., 'split', 'organize'...)"
+              data-i18n-placeholder="tools.searchPlaceholder"
+            />
+            <span
+              class="absolute inset-y-0 right-0 flex items-center rounded-lg pr-2 gap-2"
             >
-          </h2>
-          <p class="text-gray-400 text-sm" data-i18n="tools.subtitle">
-            Click a tool to open the file uploader
-          </p>
+              <kbd
+                id="shortcut"
+                class="bg-gray-100 px-2.5 py-1 rounded-md text-xs font-semibold text-gray-400 border border-gray-200"
+              ></kbd>
+              <button
+                id="open-shortcuts-btn"
+                class="p-2 hover:bg-gray-100 rounded-lg text-gray-400 hover:text-gray-600 transition-colors"
+                title="Keyboard Shortcuts"
+              >
+                <i data-lucide="settings" class="w-4 h-4"></i>
+              </button>
+            </span>
+          </div>
         </div>
 
-        <div id="grid-view">
-          <div class="mb-8 max-w-lg mx-auto">
-            <div class="relative">
-              <span class="absolute inset-y-0 left-0 flex items-center pl-3">
-                <i data-lucide="search" class="w-5 h-5 text-gray-400"></i>
-              </span>
-              <input
-                type="text"
-                id="search-bar"
-                class="w-full pl-10 pr-4 py-3 bg-gray-800/60 text-white border border-gray-700/60 rounded-xl focus:ring-2 focus:ring-indigo-500/50 focus:border-indigo-500/50 backdrop-blur-sm transition-all"
-                placeholder="Search for a tool (e.g., 'split', 'organize'...)"
-                data-i18n-placeholder="tools.searchPlaceholder"
-              />
-              <span
-                class="absolute inset-y-0 right-0 flex items-center rounded-lg pr-2 gap-2"
-              >
-                <kbd
-                  id="shortcut"
-                  class="bg-gray-900/60 px-2.5 py-1.5 rounded-md text-xs font-semibold text-gray-300 border border-gray-700/50 shadow-sm"
-                ></kbd>
-                <button
-                  id="open-shortcuts-btn"
-                  class="p-1.5 hover:bg-gray-700/60 rounded-md text-gray-400 hover:text-white transition-colors"
-                  title="Keyboard Shortcuts"
-                >
-                  <i data-lucide="settings" class="w-4 h-4"></i>
-                </button>
-              </span>
-            </div>
-          </div>
+        <!-- Category Tabs -->
+        <div
+          id="category-tabs"
+          class="flex flex-wrap justify-center gap-2 mb-8"
+        >
+          <button
+            class="category-tab active px-5 py-2 rounded-full text-sm font-medium transition-all bg-indigo-600 text-white shadow-sm"
+            data-category="all"
+          >
+            All
+          </button>
+          <button
+            class="category-tab px-5 py-2 rounded-full text-sm font-medium transition-all bg-white text-gray-600 border border-gray-200 hover:border-gray-300 hover:bg-gray-50"
+            data-category="organize"
+          >
+            Organize PDF
+          </button>
+          <button
+            class="category-tab px-5 py-2 rounded-full text-sm font-medium transition-all bg-white text-gray-600 border border-gray-200 hover:border-gray-300 hover:bg-gray-50"
+            data-category="optimize"
+          >
+            Optimize PDF
+          </button>
+          <button
+            class="category-tab px-5 py-2 rounded-full text-sm font-medium transition-all bg-white text-gray-600 border border-gray-200 hover:border-gray-300 hover:bg-gray-50"
+            data-category="convert-to"
+          >
+            Convert to PDF
+          </button>
+          <button
+            class="category-tab px-5 py-2 rounded-full text-sm font-medium transition-all bg-white text-gray-600 border border-gray-200 hover:border-gray-300 hover:bg-gray-50"
+            data-category="convert-from"
+          >
+            Convert from PDF
+          </button>
+          <button
+            class="category-tab px-5 py-2 rounded-full text-sm font-medium transition-all bg-white text-gray-600 border border-gray-200 hover:border-gray-300 hover:bg-gray-50"
+            data-category="edit"
+          >
+            Edit PDF
+          </button>
+          <button
+            class="category-tab px-5 py-2 rounded-full text-sm font-medium transition-all bg-white text-gray-600 border border-gray-200 hover:border-gray-300 hover:bg-gray-50"
+            data-category="security"
+          >
+            PDF Security
+          </button>
+        </div>
 
+        <!-- Tools Grid -->
+        <div id="grid-view">
           <div
             id="tool-grid"
-            class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 md:gap-6"
+            class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5"
           ></div>
         </div>
 
+        <!-- Tool Interface -->
         <div
           id="tool-interface"
-          class="hidden w-full max-w-4xl mx-auto bg-gray-800/80 rounded-xl shadow-2xl p-6 md:p-8 border border-gray-700/60 backdrop-blur-sm"
+          class="hidden w-full max-w-4xl mx-auto bg-white rounded-2xl shadow-xl p-6 md:p-8 border border-gray-100"
         >
           <button
             id="back-to-grid"
-            class="flex items-center gap-2 text-indigo-400 hover:text-indigo-300 mb-6 font-semibold"
+            class="flex items-center gap-2 text-indigo-600 hover:text-indigo-700 mb-6 font-semibold transition-colors"
           >
-            <i data-lucide="arrow-left" class="cursor-pointer"></i>
-            <span class="cursor-pointer" data-i18n="tools.backToTools">
-              Back to Tools
-            </span>
+            <i data-lucide="arrow-left" class="cursor-pointer w-4 h-4"></i>
+            <span class="cursor-pointer" data-i18n="tools.backToTools"
+              >Back to Tools</span
+            >
           </button>
           <div id="tool-content"></div>
         </div>
       </section>
 
+      <!-- Modals -->
       <div
         id="loader-modal"
-        class="hidden fixed inset-0 bg-black/75 flex items-center justify-center z-50"
+        class="hidden fixed inset-0 bg-black/50 flex items-center justify-center z-50"
       >
         <div
-          class="bg-gray-800 p-8 rounded-xl flex flex-col items-center gap-4 border border-gray-700/60 shadow-xl"
+          class="bg-white p-8 rounded-2xl flex flex-col items-center gap-4 border border-gray-100 shadow-2xl"
         >
           <div class="solid-spinner"></div>
           <p
             id="loader-text"
-            class="text-white text-lg font-medium"
+            class="text-gray-900 text-lg font-medium"
             data-i18n="loader.processing"
           >
             Processing...
@@ -250,20 +278,20 @@
 
       <div
         id="alert-modal"
-        class="hidden fixed inset-0 bg-black/75 flex items-center justify-center z-50 p-4"
+        class="hidden fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4"
       >
         <div
-          class="bg-gray-800 max-w-sm w-full p-6 rounded-xl border border-gray-700/60 shadow-xl text-center"
+          class="bg-white max-w-sm w-full p-6 rounded-2xl border border-gray-100 shadow-2xl text-center"
         >
-          <h3 id="alert-title" class="text-xl font-bold text-white mb-2">
+          <h3 id="alert-title" class="text-xl font-bold text-gray-900 mb-2">
             Alert
           </h3>
-          <p id="alert-message" class="text-gray-300 mb-6 whitespace-pre-line">
+          <p id="alert-message" class="text-gray-500 mb-6 whitespace-pre-line">
             This is an alert message.
           </p>
           <button
             id="alert-ok"
-            class="btn bg-indigo-600 text-white font-semibold py-2 px-6 rounded-lg hover:bg-indigo-700"
+            class="btn bg-indigo-600 text-white font-semibold py-2.5 px-8 rounded-xl hover:bg-indigo-700 transition-colors"
           >
             OK
           </button>
@@ -272,23 +300,25 @@
 
       <div
         id="preview-modal"
-        class="hidden fixed inset-0 bg-black/75 flex items-center justify-center z-40 p-4"
+        class="hidden fixed inset-0 bg-black/50 flex items-center justify-center z-40 p-4"
       >
         <div
-          class="bg-white text-black rounded-xl shadow-xl w-full max-w-4xl h-[90vh] flex flex-col"
+          class="bg-white text-gray-900 rounded-2xl shadow-2xl w-full max-w-4xl h-[90vh] flex flex-col"
         >
-          <div class="p-4 border-b flex justify-between items-center">
+          <div
+            class="p-4 border-b border-gray-100 flex justify-between items-center"
+          >
             <h3 class="text-xl font-bold">Document Preview</h3>
-            <div class="flex gap-4">
+            <div class="flex gap-3">
               <button
                 id="preview-download-btn"
-                class="btn bg-indigo-600 text-white font-semibold py-2 px-6 rounded-lg hover:bg-indigo-700"
+                class="btn bg-indigo-600 text-white font-semibold py-2 px-6 rounded-xl hover:bg-indigo-700 transition-colors"
               >
                 Download as PDF
               </button>
               <button
                 id="preview-close-btn"
-                class="btn bg-gray-600 text-white font-semibold py-2 px-6 rounded-lg hover:bg-gray-700"
+                class="btn bg-gray-100 text-gray-700 font-semibold py-2 px-6 rounded-xl hover:bg-gray-200 transition-colors"
               >
                 Close
               </button>
@@ -301,28 +331,28 @@
       <!-- Shortcuts Modal -->
       <div
         id="shortcuts-modal"
-        class="hidden fixed inset-0 bg-black/75 flex items-center justify-center z-50 p-4"
+        class="hidden fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4"
       >
         <div
-          class="bg-gray-800 w-full max-w-2xl rounded-xl border border-gray-700/60 shadow-2xl flex flex-col max-h-[80vh]"
+          class="bg-white w-full max-w-2xl rounded-2xl border border-gray-100 shadow-2xl flex flex-col max-h-[80vh]"
         >
           <div
-            class="p-6 border-b border-gray-700 flex justify-between items-center"
+            class="p-6 border-b border-gray-100 flex justify-between items-center"
           >
-            <h3 class="text-xl font-bold text-white flex items-center gap-2">
-              <i data-lucide="settings" class="w-6 h-6 text-indigo-400"></i>
+            <h3 class="text-xl font-bold text-gray-900 flex items-center gap-2">
+              <i data-lucide="settings" class="w-6 h-6 text-indigo-600"></i>
               <span data-i18n="settings.title">Settings</span>
             </h3>
             <button
               id="close-shortcuts-modal"
-              class="text-gray-400 hover:text-white transition-colors"
+              class="text-gray-400 hover:text-gray-900 transition-colors p-1 hover:bg-gray-100 rounded-lg"
             >
               <i data-lucide="x" class="w-6 h-6"></i>
             </button>
           </div>
 
           <!-- Tabs -->
-          <div class="flex border-b border-gray-700">
+          <div class="flex border-b border-gray-100">
             <button
               id="shortcuts-tab-btn"
               class="flex-1 py-3 text-sm font-medium bg-indigo-600 text-white"
@@ -332,7 +362,7 @@
             </button>
             <button
               id="preferences-tab-btn"
-              class="flex-1 py-3 text-sm font-medium text-gray-300 hover:text-white"
+              class="flex-1 py-3 text-sm font-medium text-gray-500 hover:text-gray-900 hover:bg-gray-50 transition-colors"
             >
               <i data-lucide="sliders" class="inline-block w-4 h-4 mr-1"></i>
               <span data-i18n="settings.preferences">Preferences</span>
@@ -345,32 +375,32 @@
               <div class="relative flex-grow mr-4">
                 <i
                   data-lucide="search"
-                  class="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-500"
+                  class="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-400"
                 ></i>
                 <input
                   type="text"
                   id="shortcut-search"
                   data-i18n-placeholder="settings.searchShortcuts"
                   placeholder="Search shortcuts..."
-                  class="w-full bg-gray-900/60 border border-gray-700 text-white rounded-lg pl-10 pr-4 py-2 focus:ring-indigo-500 focus:border-indigo-500"
+                  class="w-full bg-gray-50 border border-gray-200 text-gray-900 rounded-lg pl-10 pr-4 py-2 focus:ring-indigo-500 focus:border-indigo-500"
                 />
               </div>
             </div>
 
             <div
-              class="mb-4 p-3 bg-indigo-900/20 border border-indigo-500/30 rounded-lg flex items-start gap-3"
+              class="mb-4 p-3 bg-indigo-50 border border-indigo-100 rounded-lg flex items-start gap-3"
             >
               <i
                 data-lucide="info"
-                class="w-5 h-5 text-indigo-400 flex-shrink-0 mt-0.5"
+                class="w-5 h-5 text-indigo-600 flex-shrink-0 mt-0.5"
               ></i>
-              <p class="text-sm text-indigo-200">
+              <p class="text-sm text-indigo-700">
                 <span data-i18n="settings.shortcutsInfo"
                   >Press and hold keys to set a shortcut. Changes are
                   <strong>auto-saved</strong>.</span
                 >
                 <br /><span
-                  class="text-yellow-300"
+                  class="text-amber-600"
                   data-i18n="settings.shortcutsWarning"
                   >Avoid common browser shortcuts (Cmd/Ctrl+W, Cmd/Ctrl+T,
                   Cmd/Ctrl+N etc.) as they may not work reliably.</span
@@ -378,9 +408,7 @@
               </p>
             </div>
 
-            <div id="shortcuts-list" class="space-y-2">
-              <!-- Shortcuts will be populated here -->
-            </div>
+            <div id="shortcuts-list" class="space-y-2"></div>
           </div>
 
           <!-- Preferences Tab Content -->
@@ -389,7 +417,7 @@
             class="hidden p-6 overflow-y-auto flex-grow"
           >
             <h4
-              class="text-lg font-semibold text-white mb-4"
+              class="text-lg font-semibold text-gray-900 mb-4"
               data-i18n="settings.displayPreferences"
             >
               Display Preferences
@@ -397,18 +425,17 @@
 
             <div class="space-y-4">
               <div
-                class="flex items-center justify-between p-4 bg-gray-900/60 rounded-lg border border-gray-700/60"
+                class="flex items-center justify-between p-4 bg-gray-50 rounded-xl border border-gray-100"
               >
                 <div class="flex-1">
                   <label
                     for="full-width-toggle"
-                    class="text-sm font-medium text-gray-200 cursor-pointer"
+                    class="text-sm font-medium text-gray-900 cursor-pointer"
                     data-i18n="settings.fullWidthMode"
+                    >Full Width Mode</label
                   >
-                    Full Width Mode
-                  </label>
                   <p
-                    class="text-xs text-gray-400 mt-1"
+                    class="text-xs text-gray-500 mt-1"
                     data-i18n="settings.fullWidthDescription"
                   >
                     Use the full screen width for all tools instead of a
@@ -424,24 +451,23 @@
                     class="sr-only peer"
                   />
                   <div
-                    class="w-11 h-6 bg-gray-700 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-indigo-800 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-indigo-600"
+                    class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-indigo-200 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-indigo-600"
                   ></div>
                 </label>
               </div>
 
               <div
-                class="flex items-center justify-between p-4 bg-gray-900/60 rounded-lg border border-gray-700/60"
+                class="flex items-center justify-between p-4 bg-gray-50 rounded-xl border border-gray-100"
               >
                 <div class="flex-1">
                   <label
                     for="compact-mode-toggle"
-                    class="text-sm font-medium text-gray-200 cursor-pointer"
+                    class="text-sm font-medium text-gray-900 cursor-pointer"
                     data-i18n="settings.compactMode"
+                    >Compact Mode</label
                   >
-                    Compact Mode
-                  </label>
                   <p
-                    class="text-xs text-gray-400 mt-1"
+                    class="text-xs text-gray-500 mt-1"
                     data-i18n="settings.compactModeDescription"
                   >
                     Display tools as a compact list instead of cards
@@ -456,49 +482,47 @@
                     class="sr-only peer"
                   />
                   <div
-                    class="w-11 h-6 bg-gray-700 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-indigo-800 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-indigo-600"
+                    class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-indigo-200 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-indigo-600"
                   ></div>
                 </label>
               </div>
 
-              <!-- Advanced Settings Link -->
               <a
                 href="wasm-settings.html"
-                class="flex items-center justify-between p-4 bg-gray-900/60 rounded-lg border border-gray-700/60 hover:bg-gray-800 hover:border-indigo-500/50 transition-all group"
+                class="flex items-center justify-between p-4 bg-gray-50 rounded-xl border border-gray-100 hover:bg-gray-100 hover:border-indigo-200 transition-all group"
               >
                 <div class="flex-1">
                   <span
-                    class="text-sm font-medium text-gray-200 group-hover:text-white"
+                    class="text-sm font-medium text-gray-900 group-hover:text-gray-900"
+                    >Advanced Settings</span
                   >
-                    Advanced Settings
-                  </span>
-                  <p class="text-xs text-gray-400 mt-1">
+                  <p class="text-xs text-gray-500 mt-1">
                     Configure external processing modules (PyMuPDF, Ghostscript,
                     CoherentPDF)
                   </p>
                 </div>
                 <i
                   data-lucide="chevron-right"
-                  class="w-5 h-5 text-gray-500 group-hover:text-indigo-400 transition-colors"
+                  class="w-5 h-5 text-gray-400 group-hover:text-indigo-600 transition-colors"
                 ></i>
               </a>
             </div>
           </div>
 
           <div
-            class="p-6 border-t border-gray-700 flex justify-between items-center bg-gray-850 rounded-b-xl"
+            class="p-6 border-t border-gray-100 flex justify-between items-center bg-gray-50 rounded-b-2xl"
           >
             <div id="shortcuts-tab-footer" class="flex gap-3">
               <button
                 id="import-shortcuts-btn"
-                class="text-gray-400 hover:text-white text-sm font-medium flex items-center gap-1 transition-colors"
+                class="text-gray-500 hover:text-gray-900 text-sm font-medium flex items-center gap-1 transition-colors"
               >
                 <i data-lucide="upload" class="w-4 h-4"></i>
                 <span data-i18n="settings.import">Import</span>
               </button>
               <button
                 id="export-shortcuts-btn"
-                class="text-gray-400 hover:text-white text-sm font-medium flex items-center gap-1 transition-colors"
+                class="text-gray-500 hover:text-gray-900 text-sm font-medium flex items-center gap-1 transition-colors"
               >
                 <i data-lucide="download" class="w-4 h-4"></i>
                 <span data-i18n="settings.export">Export</span>
@@ -506,7 +530,7 @@
             </div>
             <div id="preferences-tab-footer" class="hidden w-full">
               <p
-                class="text-xs text-gray-400 text-center"
+                class="text-xs text-gray-500 text-center"
                 data-i18n="settings.settingsAutoSaved"
               >
                 Settings are automatically saved
@@ -514,7 +538,7 @@
             </div>
             <button
               id="reset-shortcuts-btn"
-              class="text-red-400 hover:text-red-300 text-sm font-medium transition-colors"
+              class="text-red-500 hover:text-red-700 text-sm font-medium transition-colors"
             >
               <span data-i18n="settings.resetToDefaults"
                 >Reset to Defaults</span
@@ -527,46 +551,46 @@
       <!-- Warning Modal -->
       <div
         id="warning-modal"
-        class="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 hidden items-center justify-center p-4"
+        class="fixed inset-0 bg-black/40 backdrop-blur-sm z-50 hidden items-center justify-center p-4"
       >
         <div
-          class="bg-gray-800 rounded-xl border border-gray-700/60 shadow-2xl max-w-md w-full overflow-hidden animate-scale-in"
+          class="bg-white rounded-2xl border border-gray-100 shadow-2xl max-w-md w-full overflow-hidden"
         >
           <div class="p-6">
             <div class="flex items-start gap-4 mb-4">
               <div
                 id="warning-icon"
-                class="w-12 h-12 flex items-center justify-center rounded-full bg-yellow-500/10 flex-shrink-0"
+                class="w-12 h-12 flex items-center justify-center rounded-full bg-amber-50 flex-shrink-0"
               >
                 <i
                   data-lucide="alert-triangle"
-                  class="w-6 h-6 text-yellow-500"
+                  class="w-6 h-6 text-amber-600"
                 ></i>
               </div>
               <div class="flex-1">
                 <h3
                   id="warning-title"
-                  class="text-xl font-bold text-white mb-2"
+                  class="text-xl font-bold text-gray-900 mb-2"
                 >
                   Warning
                 </h3>
                 <p
                   id="warning-message"
-                  class="text-gray-300 text-sm leading-relaxed"
+                  class="text-gray-500 text-sm leading-relaxed"
                 ></p>
               </div>
             </div>
           </div>
-          <div class="flex gap-3 p-4 bg-gray-850 border-t border-gray-700">
+          <div class="flex gap-3 p-4 bg-gray-50 border-t border-gray-100">
             <button
               id="warning-cancel-btn"
-              class="flex-1 px-4 py-2.5 bg-gray-700 hover:bg-gray-600 text-white rounded-lg font-medium transition-colors"
+              class="flex-1 px-4 py-2.5 bg-white hover:bg-gray-100 text-gray-700 border border-gray-200 rounded-xl font-medium transition-colors"
             >
               Cancel
             </button>
             <button
               id="warning-confirm-btn"
-              class="flex-1 px-4 py-2.5 bg-yellow-600 hover:bg-yellow-700 text-white rounded-lg font-medium transition-colors"
+              class="flex-1 px-4 py-2.5 bg-amber-500 hover:bg-amber-600 text-white rounded-xl font-medium transition-colors"
             >
               Proceed
             </button>
@@ -576,28 +600,28 @@
 
       <div
         id="password-modal"
-        class="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 hidden items-center justify-center p-4"
+        class="fixed inset-0 bg-black/40 backdrop-blur-sm z-50 hidden items-center justify-center p-4"
       >
         <div
-          class="bg-gray-800 rounded-xl border border-gray-700/60 shadow-2xl max-w-md w-full overflow-hidden"
+          class="bg-white rounded-2xl border border-gray-100 shadow-2xl max-w-md w-full overflow-hidden"
         >
           <div class="p-6">
             <div class="flex items-start gap-4 mb-4">
               <div
-                class="w-12 h-12 flex items-center justify-center rounded-full bg-indigo-500/10 flex-shrink-0"
+                class="w-12 h-12 flex items-center justify-center rounded-full bg-indigo-50 flex-shrink-0"
               >
-                <i data-lucide="lock" class="w-6 h-6 text-indigo-400"></i>
+                <i data-lucide="lock" class="w-6 h-6 text-indigo-600"></i>
               </div>
               <div class="flex-1">
                 <h3
                   id="password-modal-title"
-                  class="text-xl font-bold text-white mb-1"
+                  class="text-xl font-bold text-gray-900 mb-1"
                 >
                   Password Required
                 </h3>
                 <p
                   id="password-modal-filename"
-                  class="text-gray-400 text-sm truncate"
+                  class="text-gray-500 text-sm truncate"
                 ></p>
               </div>
             </div>
@@ -606,34 +630,34 @@
                 <input
                   type="password"
                   id="password-modal-input"
-                  class="w-full bg-gray-700/60 border border-gray-600 text-gray-200 rounded-lg px-4 py-2.5 pr-10 text-sm focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+                  class="w-full bg-gray-50 border border-gray-200 text-gray-900 rounded-xl px-4 py-2.5 pr-10 text-sm focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
                   placeholder="Enter password"
                   autocomplete="off"
                 />
                 <button
                   id="password-modal-toggle"
                   type="button"
-                  class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-200"
+                  class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600"
                 >
                   <i data-lucide="eye" class="w-4 h-4"></i>
                 </button>
               </div>
               <p
                 id="password-modal-error"
-                class="text-xs text-red-400 mt-2 hidden"
+                class="text-xs text-red-500 mt-2 hidden"
               ></p>
             </div>
           </div>
-          <div class="flex gap-3 p-4 border-t border-gray-700">
+          <div class="flex gap-3 p-4 border-t border-gray-100">
             <button
               id="password-modal-cancel"
-              class="flex-1 px-4 py-2.5 bg-gray-700 hover:bg-gray-600 text-white rounded-lg font-medium transition-colors"
+              class="flex-1 px-4 py-2.5 bg-white hover:bg-gray-100 text-gray-700 border border-gray-200 rounded-xl font-medium transition-colors"
             >
               Skip
             </button>
             <button
               id="password-modal-submit"
-              class="flex-1 px-4 py-2.5 bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg font-medium transition-colors"
+              class="flex-1 px-4 py-2.5 bg-indigo-600 hover:bg-indigo-700 text-white rounded-xl font-medium transition-colors"
             >
               Unlock
             </button>
