@@ -4,20 +4,6 @@ const baseCategories = [
     name: 'Popular Tools',
     tools: [
       {
-        href: import.meta.env.BASE_URL + 'pdf-workflow.html',
-        name: 'PDF Workflow Builder',
-        icon: 'ph-tree-structure',
-        subtitle:
-          'Build custom PDF processing pipelines with a visual node editor.',
-      },
-      {
-        href: import.meta.env.BASE_URL + 'pdf-multi-tool.html',
-        name: 'PDF Multi Tool',
-        icon: 'ph-pencil-ruler',
-        subtitle:
-          'Merge, Split, Organize, Delete, Rotate, Add Blank Pages, Extract and Duplicate in an unified interface.',
-      },
-      {
         href: import.meta.env.BASE_URL + 'merge-pdf.html',
         name: 'Merge PDF',
         icon: 'ph-browsers',
@@ -34,6 +20,20 @@ const baseCategories = [
         name: 'Compress PDF',
         icon: 'ph-lightning',
         subtitle: 'Reduce the file size of your PDF.',
+      },
+      {
+        href: import.meta.env.BASE_URL + 'pdf-multi-tool.html',
+        name: 'PDF Multi Tool',
+        icon: 'ph-pencil-ruler',
+        subtitle:
+          'Merge, Split, Organize, Delete, Rotate, Add Blank Pages, Extract and Duplicate in an unified interface.',
+      },
+      {
+        href: import.meta.env.BASE_URL + 'pdf-workflow.html',
+        name: 'PDF Workflow Builder',
+        icon: 'ph-tree-structure',
+        subtitle:
+          'Build custom PDF processing pipelines with a visual node editor.',
       },
       {
         href: import.meta.env.BASE_URL + 'edit-pdf.html',
