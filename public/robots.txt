@@ -1,12 +1,16 @@
-# BentoPDF Robots.txt
-# https://www.bentopdf.com
+# VietPDF Robots.txt
+# https://www.vietpdf.com
 
 # Allow all crawlers
 User-agent: *
 Allow: /
 
+# Facebook crawler (required for Open Graph / sharing debugger)
+User-agent: facebookexternalhit
+Allow: /
+
 # Sitemap location
-Sitemap: https://www.bentopdf.com/sitemap.xml
+Sitemap: https://www.vietpdf.com/sitemap.xml
 
 # Disallow internal/system paths
 Disallow: /api/
