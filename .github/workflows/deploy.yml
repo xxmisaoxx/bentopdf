@@ -36,6 +36,7 @@ jobs:
           VITE_FOOTER_TEXT: © 2026 VietPDF. All rights reserved.
           VITE_DEFAULT_LANGUAGE: en
           VITE_CORS_PROXY_URL: https://vietpdf-cors-proxy.misao.workers.dev
+          VITE_LIBREOFFICE_CDN_URL: https://vietpdf-r2-assets.misao.workers.dev/libreoffice-wasm/
 
       - name: Deploy to Cloudflare Pages
         uses: cloudflare/wrangler-action@v3

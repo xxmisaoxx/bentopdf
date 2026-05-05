@@ -1,0 +1,22 @@
+name = "vietpdf-r2-assets"
+main = "r2-asset-worker.js"
+compatibility_date = "2024-01-01"
+
+# R2 bucket binding
+[[r2_buckets]]
+binding = "vietpdf_assets"
+bucket_name = "vietpdf-assets"
+
+# =============================================================================
+# DEPLOYMENT
+# =============================================================================
+# 1. cd cloudflare/r2-asset-worker
+# 2. npx wrangler deploy
+#
+# =============================================================================
+# CUSTOM DOMAIN (Optional)
+# =============================================================================
+# Uncomment to use a custom subdomain:
+# routes = [
+#   { pattern = "r2.vietpdf.com/*", zone_name = "vietpdf.com" }
+# ]

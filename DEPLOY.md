@@ -78,17 +78,42 @@ Then create a DNS record in Cloudflare:
 
 ---
 
-## Step 3: Build for Production
+## Step 3: R2 CDN for Large WASM Files (Already Configured)
+
+Cloudflare Pages has a **25 MB per-file limit**. The LibreOffice WASM files (`soffice.data.gz` ≈ 27 MB, `soffice.wasm.gz` ≈ 46 MB) exceed this.
+
+**✅ This is already set up for you:**
+
+- **R2 bucket:** `vietpdf-assets`
+- **CDN Worker:** `https://vietpdf-r2-assets.misao.workers.dev`
+- **Files uploaded:**
+  - `libreoffice-wasm/soffice.data.gz`
+  - `libreoffice-wasm/soffice.wasm.gz`
+
+The build automatically points to this CDN via `VITE_LIBREOFFICE_CDN_URL`.
+
+### Optional: Use a Custom Domain
+
+If you prefer a branded URL (e.g., `r2.vietpdf.com`):
+
+1. In Cloudflare Dashboard → **Workers & Pages** → `vietpdf-r2-assets`
+2. Go to **Triggers** → **Custom Domains**
+3. Add `r2.vietpdf.com`
+4. Update the CDN URL in `.github/workflows/deploy.yml` and `.env.example`
+
+---
+
+## Step 4: Build for Production
 
 ```bash
 npm run build
 ```
 
-This generates a `dist/` folder with all static assets.
+This generates a `dist/` folder with all static assets. Large `.gz` files are **excluded** automatically.
 
 ---
 
-## Step 4: Deploy to Cloudflare Pages
+## Step 5: Deploy to Cloudflare Pages
 
 ### Option A: Wrangler CLI (fastest)
 
@@ -111,7 +136,8 @@ npm run deploy:pages
    - **Framework preset:** `None`
    - **Build command:** `npm run build`
    - **Build output directory:** `dist`
-5. Add environment variables in the dashboard (same as `.env.production`)
+5. Add environment variables in the dashboard (same as `.env.production`), **including**:
+   - `VITE_LIBREOFFICE_CDN_URL=https://your-r2-public-url/libreoffice-wasm/`
 6. Click **Save and Deploy**
 
 ### Option C: Custom Domain
@@ -125,7 +151,7 @@ After the first deploy:
 
 ---
 
-## Step 5: Verify Headers
+## Step 6: Verify Headers
 
 Cloudflare Pages automatically picks up `public/_headers`. Verify COOP/COEP is active:
 
@@ -176,6 +202,9 @@ User Browser
     ├──→ Cloudflare Pages (vietpdf.com) ──→ Static HTML/CSS/JS
     │                                          └── PDF processing in browser (WASM)
     │
+    ├──→ Cloudflare R2 (vietpdf-assets) ──→ Large WASM files
+    │        (LibreOffice .data.gz / .wasm.gz)
+    │
     └──→ Cloudflare Workers (cors-proxy) ──→ Certificate chain proxy
                                                (only for Digital Signature tool)
 ```
@@ -198,4 +227,4 @@ This deploys both the CORS proxy and the Pages site.
 
 - **No server required:** All PDF processing happens in the browser. Cloudflare Pages only serves static files.
 - **WASM caching:** `.wasm` files are cached for 1 year. If you update WASM modules, bump the version in the URL.
-- **CDN:** Large WASM files (LibreOffice, Ghostscript, PyMuPDF) are loaded from jsDelivr by default. For faster loads in Vietnam/Asia, consider mirroring them to a local CDN.
+- **R2 CDN:** LibreOffice WASM files are served from Cloudflare R2. For faster loads in Vietnam/Asia, enable R2's custom domain with Cloudflare's global CDN.

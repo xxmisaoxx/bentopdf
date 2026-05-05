@@ -44,6 +44,7 @@ codeql-results.csv
 #backup
 .seo-backup
 libreoffice-wasm-package
+assets/libreoffice-wasm
 
 # helm chart
 bentopdf-*.tgz

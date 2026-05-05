@@ -9,6 +9,9 @@ import { WorkerBrowserConverter } from '@matbee/libreoffice-converter/browser';
 import type { InputFormat } from '@matbee/libreoffice-converter/browser';
 
 const LIBREOFFICE_LOCAL_PATH = import.meta.env.BASE_URL + 'libreoffice-wasm/';
+const LIBREOFFICE_CDN_URL = (
+  import.meta.env.VITE_LIBREOFFICE_CDN_URL || ''
+).replace(/\/?$/, '/');
 
 export interface LoadProgress {
   phase: 'loading' | 'initializing' | 'converting' | 'complete' | 'ready';
@@ -29,6 +32,19 @@ export class LibreOfficeConverter {
 
   constructor(basePath?: string) {
     this.basePath = basePath || LIBREOFFICE_LOCAL_PATH;
+  }
+
+  private getFileUrl(filename: string): string {
+    // Use CDN for large .gz files if configured
+    if (
+      LIBREOFFICE_CDN_URL &&
+      (filename.endsWith('.gz') ||
+        filename.endsWith('.wasm') ||
+        filename.endsWith('.data'))
+    ) {
+      return `${LIBREOFFICE_CDN_URL}${filename}`;
+    }
+    return `${this.basePath}${filename}`;
   }
 
   async initialize(onProgress?: ProgressCallback): Promise<void> {
@@ -53,8 +69,8 @@ export class LibreOfficeConverter {
 
       this.converter = new WorkerBrowserConverter({
         sofficeJs: `${this.basePath}soffice.js`,
-        sofficeWasm: `${this.basePath}soffice.wasm.gz`,
-        sofficeData: `${this.basePath}soffice.data.gz`,
+        sofficeWasm: this.getFileUrl('soffice.wasm.gz'),
+        sofficeData: this.getFileUrl('soffice.data.gz'),
         sofficeWorkerJs: `${this.basePath}soffice.worker.js`,
         browserWorkerJs: `${this.basePath}browser.worker.global.js`,
         verbose: false,
