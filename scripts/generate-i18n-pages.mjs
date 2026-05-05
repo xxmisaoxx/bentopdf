@@ -8,7 +8,7 @@ const __dirname = path.dirname(__filename);
 
 const DIST_DIR = path.resolve(__dirname, '../dist');
 const LOCALES_DIR = path.resolve(__dirname, '../public/locales');
-const SITE_URL = (process.env.SITE_URL || 'https://www.bentopdf.com').replace(
+const SITE_URL = (process.env.SITE_URL || 'https://vietpdf.com').replace(
   /\/+$/,
   ''
 );
@@ -62,7 +62,7 @@ function buildUrl(langPrefix, pagePath) {
   return parts.filter(Boolean).join('/').replace(/\/+$/, '') || SITE_URL;
 }
 
-const ORGANIZATION_LD_MARKER = 'data-bentopdf-organization';
+const ORGANIZATION_LD_MARKER = 'data-vietpdf-organization';
 
 function injectOrganizationLd(document) {
   if (document.querySelector(`script[${ORGANIZATION_LD_MARKER}]`)) return;
@@ -84,10 +84,9 @@ function injectOrganizationLd(document) {
     url: SITE_URL,
     logo: `${SITE_URL}/images/favicon.svg`,
     sameAs: [
-      'https://github.com/alam00000/bentopdf',
-      'https://x.com/BentoPDF',
-      'https://www.linkedin.com/company/bentopdf/',
-      'https://www.instagram.com/thebentopdf/',
+      'https://github.com/xxmisaoxx/bentopdf',
+      'https://www.linkedin.com/company/vietpdf/',
+      'https://www.instagram.com/thevietpdf/',
     ],
   };
   const script = document.createElement('script');
@@ -97,7 +96,7 @@ function injectOrganizationLd(document) {
   document.body.appendChild(script);
 }
 
-const BREADCRUMB_MARKER = 'data-bentopdf-breadcrumb';
+const BREADCRUMB_MARKER = 'data-vietpdf-breadcrumb';
 
 function injectToolBreadcrumb(document, lang, toolName, toolUrl) {
   const h1 = document.querySelector('h1[data-i18n^="tools:"]');
@@ -139,7 +138,7 @@ function injectToolBreadcrumb(document, lang, toolName, toolUrl) {
       {
         '@type': 'ListItem',
         position: 1,
-        name: 'BentoPDF',
+        name: 'VietPDF',
         item: homeUrl,
       },
       {

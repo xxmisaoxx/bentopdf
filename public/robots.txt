@@ -1,5 +1,5 @@
 # VietPDF Robots.txt
-# https://www.vietpdf.com
+# https://vietpdf.com
 
 # Allow all crawlers
 User-agent: *
@@ -10,7 +10,7 @@ User-agent: facebookexternalhit
 Allow: /
 
 # Sitemap location
-Sitemap: https://www.vietpdf.com/sitemap.xml
+Sitemap: https://vietpdf.com/sitemap.xml
 
 # Disallow internal/system paths
 Disallow: /api/

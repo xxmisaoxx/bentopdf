@@ -31,7 +31,7 @@ jobs:
       - name: Build
         run: npm run build
         env:
-          SITE_URL: https://www.vietpdf.com
+          SITE_URL: https://vietpdf.com
           VITE_BRAND_NAME: VietPDF
           VITE_BRAND_LOGO: images/favicon-no-bg.svg
           VITE_FOOTER_TEXT: © 2026 VietPDF. All rights reserved.

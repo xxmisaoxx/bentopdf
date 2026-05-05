@@ -85,7 +85,7 @@ This is a **live preview** markdown editor with full plugin support.
 
 - **Bold** and *italic* text
 - ~~Strikethrough~~ text
-- [Links](https://bentopdf.com)
+- [Links](https://vietpdf.com)
 - ==Highlighted text== using mark
 - ++Inserted text++ using ins
 - H~2~O for subscript
