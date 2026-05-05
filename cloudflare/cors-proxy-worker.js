@@ -30,7 +30,7 @@ const ALLOWED_TSA_HOSTS = new Set([
   'tsa.mesign.com',
 ]);
 
-const ALLOWED_ORIGINS = ['https://www.bentopdf.com', 'https://bentopdf.com'];
+const ALLOWED_ORIGINS = ['https://www.vietpdf.com', 'https://vietpdf.com'];
 
 const SAFE_CONTENT_TYPES = [
   'application/x-x509-ca-cert',
