@@ -42,4 +42,4 @@ jobs:
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: dc517368fcdd4d6206f916eac6045bc4
-          command: pages deploy dist --project-name=vietpdf --branch=main
+          command: pages deploy dist --project-name=vietpdf --branch=main --commit-dirty=true
